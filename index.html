@@ -58,14 +58,31 @@
         }
 
         .footer {
-            text-align: center;
-            padding: 10px;
-            font-size: 14px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #fff;
-        }
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 600px) {
+    .footer a {
+        display: block; /* Stack links vertically */
+        margin: 5px 0;
+    }
+}
+
+/* Desktop screen */
+@media (min-width: 601px) {
+    .footer a {
+        margin: 0 10px;
+        display: inline-block; /* Display links in a row */
+    }
+}
+
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4069805592498055"
      crossorigin="anonymous"></script>
