@@ -38,6 +38,32 @@ a:hover {
     background-color: #d40047;
 }
 
+.footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 600px) {
+    .footer a {
+        display: block; /* Stack links vertically */
+        margin: 5px 0;
+    }
+}
+
+/* Desktop screen */
+@media (min-width: 601px) {
+    .footer a {
+        margin: 0 10px;
+        display: inline-block; /* Display links in a row */
+    }
+}
+       
     </style>
 </head>
 <body>
@@ -94,5 +120,12 @@ a:hover {
 
         <a href="learn-more.html">Back</a>
     </div>
+    <div class="footer">
+    2025 DailyActsofKindness | 
+    <a href="mailto:mmajcherczykolzcak@gmail.com?subject=Daily%20Acts%20of%20Kindness%20Enquiry">Contact</a> |
+    <a href="privacy.html">Privacy Notice</a> | 
+    <a href="terms.html">Terms of Service</a>
+</div>
+
 </body>
 </html>
