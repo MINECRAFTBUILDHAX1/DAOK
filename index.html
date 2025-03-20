@@ -82,6 +82,21 @@
             font-size: 18px;
         }
 
+        /* Animation for kindness box */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+#kindness-box {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Hide kindness box after the animation */
+.hidden {
+    display: none;
+}
+
         .footer {
     text-align: center;
     padding: 10px;
@@ -254,35 +269,43 @@
 
 
 
-    // Function to generate a kindness act
-    function generateKindness() {
-        const now = new Date().getTime();
-        const oneDay = 24 * 60 * 60 * 1000;
+   function generateKindness() {
+    const now = new Date().getTime();
+    const oneDay = 24 * 60 * 60 * 1000;
 
-        // Get the last clicked time and the current time
-        const lastClick = localStorage.getItem("lastClick");
-        
-        // Prevent multiple clicks on the same day
-        if (lastClick && now - lastClick < oneDay) {
-            return; // Prevent generating a new kindness act within the same day
-        }
+    // Get the last clicked time and the current time
+    const lastClick = localStorage.getItem("lastClick");
 
-        // Randomly pick a kindness act
-        const randomAct = kindnessActs[Math.floor(Math.random() * kindnessActs.length)];
-
-        // Save the kindness message and last click time in localStorage
-        localStorage.setItem("kindnessMessage", randomAct);
-        localStorage.setItem("lastClick", now);
-
-        // Update the kindness box with the new kindness act
-        document.getElementById("kindness-box").innerText = randomAct;
-
-        // Disable the button after it’s clicked
-        document.getElementById("kindness-btn").disabled = true;
-
-        // Start the countdown timer
-        startCountdown(oneDay - (now - lastClick)); 
+    // Prevent multiple clicks on the same day
+    if (lastClick && now - lastClick < oneDay) {
+        return; // Prevent generating a new kindness act within the same day
     }
+
+    // Randomly pick a kindness act
+    const randomAct = kindnessActs[Math.floor(Math.random() * kindnessActs.length)];
+
+    // Save the kindness message and last click time in localStorage
+    localStorage.setItem("kindnessMessage", randomAct);
+    localStorage.setItem("lastClick", now);
+
+    // Update the kindness box with the new kindness act
+    const kindnessBox = document.getElementById("kindness-box");
+    kindnessBox.innerText = randomAct;
+
+    // Disable the button after it’s clicked
+    document.getElementById("kindness-btn").disabled = true;
+
+    // Start the countdown timer
+    startCountdown(oneDay - (now - lastClick)); 
+
+    // Trigger animation
+    kindnessBox.classList.remove('hidden');
+
+    // Hide the kindness box after 5 seconds (adjust time as needed)
+    setTimeout(function() {
+        kindnessBox.classList.add('hidden');
+    }, 5000); // Box will disappear after 5 seconds
+}
 
     // Countdown timer function
     function startCountdown(remainingTime) {
