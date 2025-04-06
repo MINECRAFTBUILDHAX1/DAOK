@@ -54,7 +54,7 @@
             background-color: #fff;
         }
 .footer a {
-    display: inline-block; /* Use inline-block so the width adjusts to content */
+    display: inline-block; /* Let the width adjust based on content */
     background-color: #ff0053;
     color: white;
     padding: 12px 24px;
@@ -62,8 +62,9 @@
     border-radius: 8px;
     text-decoration: none;
     text-align: center;
-    width: auto; /* Let the width adjust automatically */
-    max-width: 100%; /* Prevent button from becoming too wide */
+    width: auto; /* Ensure the width adjusts to content */
+    min-width: 200px; /* Set a minimum width to prevent very small buttons */
+    white-space: nowrap; /* Prevent text from breaking into multiple lines */
     margin: 30px auto 0; /* Centers the button and adds space above */
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
