@@ -43,7 +43,7 @@
   .menu-button {
     position: fixed;
     top: 20px;
-    right: 20px;
+    left: 20px;
     z-index: 9999;
     font-size: 28px;
     background: none;
@@ -414,9 +414,18 @@
         }
   };
         
-        function toggleMenu() {
-    const menu = document.getElementById('sideMenu');
-    menu.classList.toggle('open');  // Toggle the 'open' class
+function toggleMenu() {
+  const menu = document.getElementById('sideMenu');
+  const button = document.querySelector('.menu-button');  // Get the menu button
+
+  menu.classList.toggle('open');  // Toggle the 'open' class for the side menu
+
+  // Hide the menu button when the menu is open, show it when the menu is closed
+  if (menu.classList.contains('open')) {
+    button.style.display = 'none';  // Hide button
+  } else {
+    button.style.display = 'block';  // Show button
+  }
 }
 
 
