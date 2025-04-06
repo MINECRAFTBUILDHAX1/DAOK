@@ -53,8 +53,11 @@
             width: 100%;
             background-color: #fff;
         }
+
 .footer a {
-    display: inline-block; /* Let the width adjust based on content */
+    display: inline-flex; /* Use flexbox for dynamic content size */
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Center horizontally */
     background-color: #ff0053;
     color: white;
     padding: 12px 24px;
@@ -62,10 +65,9 @@
     border-radius: 8px;
     text-decoration: none;
     text-align: center;
-    width: auto; /* Ensure the width adjusts to content */
-    min-width: 200px; /* Set a minimum width to prevent very small buttons */
-    white-space: nowrap; /* Prevent text from breaking into multiple lines */
-    margin: 30px auto 0; /* Centers the button and adds space above */
+    min-width: 200px; /* Ensure the width adjusts for long text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    margin: 30px auto 0; /* Center the button and add space above */
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
