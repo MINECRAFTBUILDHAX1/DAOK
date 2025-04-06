@@ -175,27 +175,25 @@
         display: inline-block; /* Display links in a row */
     }
 }
-        /* Style for the 'Learn More' button */
 .learn-more-button {
-  position: absolute;
-  bottom: 20px;  /* Position it at the bottom of the sidebar */
-  left: 20px;
-  width: 200px;  /* Adjust the width if needed */
-  padding: 12px;
-  background-color: #ff005e;  /* Button color */
-  color: white;  /* Text color */
-  text-align: center;  /* Center the text */
-  font-size: 16px;  /* Font size */
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;  /* Rounded corners */
-  text-decoration: none;  /* Remove underline */
-  transition: background-color 0.3s;
+    display: block;
+    background-color: #ff0053;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    width: fit-content;
+    margin: 30px auto 0; /* This centers the button and gives space from the text above */
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .learn-more-button:hover {
-  background-color: #e4004f;  /* Darker shade on hover */
+    background-color: #d40047;
+    transform: scale(1.1);
 }
+
         /* Style for the 'Back' button */
 .back-button {
   padding: 12px 24px;
