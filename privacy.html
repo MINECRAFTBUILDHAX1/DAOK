@@ -61,8 +61,8 @@
             width: 100%;
             background-color: #fff;
         }
-        .footer a {
-    display: block;
+.footer a {
+    display: inline-block; /* Use inline-block so the width adjusts to content */
     background-color: #ff0053;
     color: white;
     padding: 12px 24px;
@@ -70,7 +70,8 @@
     border-radius: 8px;
     text-decoration: none;
     text-align: center;
-    width: fit-content;
+    width: auto; /* Let the width adjust automatically */
+    max-width: 100%; /* Prevent button from becoming too wide */
     margin: 30px auto 0; /* Centers the button and adds space above */
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
